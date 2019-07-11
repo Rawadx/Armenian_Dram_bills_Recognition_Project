@@ -1,6 +1,9 @@
 import os, os.path
 import cv2
 import matplotlib.pyplot as plt
+import numpy as np
+
+
 
 imgs = []
 path = "images/"
@@ -12,4 +15,7 @@ for f in os.listdir(path):
         imgs.append(cv2.imread((os.path.join(path,f))))
         
         
-plt.imshow(imgs[0])        
+plt.imshow(imgs[5])        
+
+div = np.array(imgs)
+div
