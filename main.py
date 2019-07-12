@@ -38,8 +38,8 @@ while True:
     #Homograpy
     
     if len(good) > 10:
-        query_pts = np.float32([kp_image[m.queryIdx].pt for m in good]).reshape(-1,1,2)
-        train_pts = np.float32([kp_grayframe[m.trainIdx] for m in good]).reshape(-1,1,2)
+        query_pts = np.float32([img1[m.queryIdx].pt for m in good]).reshape(-1,1,2)
+        train_pts = np.float32([grayframe[m.trainIdx] for m in good]).reshape(-1,1,2)
     
         matrix, mask = cv2.findHomography(query_pts, train_pts, cv.2RANSAC, 5.0)
         matches_mask = mask.ravel().tolist()
